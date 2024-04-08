@@ -13,21 +13,21 @@ export type PumaItem = {
 };
 export const pumaArr: PumaItem[] = [
   {
-    id: 0,
+    id: 1,
     model: "Puma RS-X Efekt Premium",
     collection: "new collection1",
     price: "100200$",
     picture: pumaModel1,
   },
   {
-    id: 1,
+    id: 2,
     model: "Puma Street",
     collection: "new collection22",
     price: "200300$",
     picture: pumaModel2,
   },
   {
-    id: 2,
+    id: 3,
     model: "Puma Army Trainer",
     collection: "new collection333",
     price: "300400$",
