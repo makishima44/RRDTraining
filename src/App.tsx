@@ -8,11 +8,13 @@ import { Adidas } from "./components/pages/Adidas";
 import { Puma } from "./components/pages/Puma";
 import { Abibas } from "./components/pages/Abibas";
 import { Model } from "./components/pages/Model";
+import { Prices } from "./components/pages/Prices";
 
 const PATH = {
   PAGE1: "/Adidas",
   PAGE2: "/Puma",
   PAGE3: "/Abibas",
+  PAGE4: "/Prices",
   MODEL: "/:model/:id",
   PAGEERROR: "/error404",
 } as const;
@@ -35,6 +37,9 @@ function App() {
             <S.NavWrapper>
               <NavLink to={PATH.PAGE3}>Abibas</NavLink>
             </S.NavWrapper>
+            <S.NavWrapper>
+              <NavLink to={PATH.PAGE4}>Prices</NavLink>
+            </S.NavWrapper>
           </div>
         </S.Nav>
         <S.Content>
@@ -44,6 +49,7 @@ function App() {
             <Route path={PATH.PAGE1} element={<Adidas />} />
             <Route path={PATH.PAGE2} element={<Puma />} />
             <Route path={PATH.PAGE3} element={<Abibas />} />
+            <Route path={PATH.PAGE4} element={<Prices />} />
             <Route path={PATH.MODEL} element={<Model />} />
 
             <Route path="*" element={<Error404 />} />
