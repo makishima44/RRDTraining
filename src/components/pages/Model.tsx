@@ -22,6 +22,10 @@ export const Model = () => {
     ? crossModel[model].find((el) => el.id === Number(id))
     : null;
 
+  // const currentModel = crossModel[model as string].find(
+  //   (el) => el.id === Number(id)
+  // );
+
   return (
     <S.ModelWrapper>
       {currentModel ? (
