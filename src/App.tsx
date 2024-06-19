@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { Error404 } from "./components/pages/Error404";
 import { NavLink } from "react-router-dom";
 import { S } from "./components/pages/_styles";
@@ -43,7 +43,8 @@ function App() {
           </div>
         </S.Nav>
         <S.Content>
-          <Routes>
+          <Outlet />
+          {/* <Routes>
             <Route path={"/"} element={<Navigate to={"/Adidas"} />} />
 
             <Route path={PATH.PAGE1} element={<Adidas />} />
@@ -53,7 +54,7 @@ function App() {
             <Route path={PATH.MODEL} element={<Model />} />
 
             <Route path="*" element={<Error404 />} />
-          </Routes>
+          </Routes> */}
         </S.Content>
       </S.Body>
       <S.Footer>abibas 2023</S.Footer>
