@@ -1,32 +1,7 @@
-import React, { useState } from "react";
-
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
-import { Error404 } from "./components/pages/Error404";
 import { NavLink } from "react-router-dom";
 import { S } from "./components/pages/_styles";
-import { Adidas } from "./components/pages/Adidas";
-import { Puma } from "./components/pages/Puma";
-import { Abibas } from "./components/pages/Abibas";
-import { Model } from "./components/pages/Model";
-import { Prices } from "./components/pages/Prices";
-
-// const PATH = {
-//   PAGE1: "/Adidas",
-//   PAGE2: "/Puma",
-//   PAGE3: "/Abibas",
-//   PAGE4: "/Prices",
-//   MODEL: "/:model/:id",
-//   PAGEERROR: "/error404",
-// } as const;
-
-const PATH = {
-  ADIDAS: "/Adidas",
-  PUMA: "/Puma",
-  ABIBAS: "/Abibas",
-  PRICES: "/Prices",
-  PROTECTED: "/Protected",
-  MODEL: "/:model/:id",
-} as const;
+import { PATH } from "./routes/router";
 
 function App() {
   return (
@@ -52,6 +27,9 @@ function App() {
             <S.NavWrapper>
               <NavLink to={PATH.PROTECTED}>ProtectedPage</NavLink>
             </S.NavWrapper>
+            {/* <S.NavWrapper>
+              <NavLink to={PATH.LOGIN}>Login</NavLink>
+            </S.NavWrapper> */}
           </div>
         </S.Nav>
         <S.Content>
