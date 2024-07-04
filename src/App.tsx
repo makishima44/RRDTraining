@@ -10,13 +10,22 @@ import { Abibas } from "./components/pages/Abibas";
 import { Model } from "./components/pages/Model";
 import { Prices } from "./components/pages/Prices";
 
+// const PATH = {
+//   PAGE1: "/Adidas",
+//   PAGE2: "/Puma",
+//   PAGE3: "/Abibas",
+//   PAGE4: "/Prices",
+//   MODEL: "/:model/:id",
+//   PAGEERROR: "/error404",
+// } as const;
+
 const PATH = {
-  PAGE1: "/Adidas",
-  PAGE2: "/Puma",
-  PAGE3: "/Abibas",
-  PAGE4: "/Prices",
+  ADIDAS: "/Adidas",
+  PUMA: "/Puma",
+  ABIBAS: "/Abibas",
+  PRICES: "/Prices",
+  PROTECTED: "/Protected",
   MODEL: "/:model/:id",
-  PAGEERROR: "/error404",
 } as const;
 
 function App() {
@@ -29,16 +38,19 @@ function App() {
         <S.Nav>
           <div>
             <S.NavWrapper>
-              <NavLink to={PATH.PAGE1}>Adidas</NavLink>
+              <NavLink to={PATH.ADIDAS}>Adidas</NavLink>
             </S.NavWrapper>
             <S.NavWrapper>
-              <NavLink to={PATH.PAGE2}>Puma</NavLink>
+              <NavLink to={PATH.PUMA}>Puma</NavLink>
             </S.NavWrapper>
             <S.NavWrapper>
-              <NavLink to={PATH.PAGE3}>Abibas</NavLink>
+              <NavLink to={PATH.ABIBAS}>Abibas</NavLink>
             </S.NavWrapper>
             <S.NavWrapper>
-              <NavLink to={PATH.PAGE4}>Prices</NavLink>
+              <NavLink to={PATH.PRICES}>Prices</NavLink>
+            </S.NavWrapper>
+            <S.NavWrapper>
+              <NavLink to={PATH.PROTECTED}>ProtectedPage</NavLink>
             </S.NavWrapper>
           </div>
         </S.Nav>
