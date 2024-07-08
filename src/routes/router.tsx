@@ -12,7 +12,6 @@ import { Abibas } from "../components/pages/Abibas";
 import { Prices } from "../components/pages/Prices";
 import { Model } from "../components/pages/Model";
 import { ProtectedPage } from "../components/pages/ProtectedPage";
-import { ProtectedRoute } from "./ProtectedRoute";
 import { Login } from "../components/pages/Login";
 
 export const PATH = {
@@ -52,14 +51,18 @@ export const PrivateRoutes = () => {
 export const router = createBrowserRouter([
   {
     path: "/",
+    element: <Navigate to={PATH.ADIDAS} />, // Перенаправление с главной страницы на Adidas
+  },
+  {
+    path: "/",
     element: <App />,
-    errorElement: <Navigate to={PATH.EROOR} />,
     children: [
       {
         element: <PrivateRoutes />,
         children: priveteRoutes,
       },
       ...publicRoutes,
+      { path: "*", element: <Navigate to={PATH.EROOR} /> },
     ],
   },
 ]);

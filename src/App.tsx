@@ -1,9 +1,17 @@
-import { Navigate, Outlet, Route, Routes } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { S } from "./components/pages/_styles";
 import { PATH } from "./routes/router";
+import styles from "./components/Site.module.css";
+import { Link } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
+
+  const navigateHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
       <S.Header>
@@ -33,18 +41,16 @@ function App() {
           </div>
         </S.Nav>
         <S.Content>
+          <div className={styles.HorizontalNavigation}>
+            <Link to={PATH.ADIDAS} className={styles.LinkLikeButton}>
+              Главная
+            </Link>
+
+            <button onClick={navigateHandler} className={styles.ButtonLikeLink}>
+              Назад
+            </button>
+          </div>
           <Outlet />
-          {/* <Routes>
-            <Route path={"/"} element={<Navigate to={"/Adidas"} />} />
-
-            <Route path={PATH.PAGE1} element={<Adidas />} />
-            <Route path={PATH.PAGE2} element={<Puma />} />
-            <Route path={PATH.PAGE3} element={<Abibas />} />
-            <Route path={PATH.PAGE4} element={<Prices />} />
-            <Route path={PATH.MODEL} element={<Model />} />
-
-            <Route path="*" element={<Error404 />} />
-          </Routes> */}
         </S.Content>
       </S.Body>
       <S.Footer>abibas 2023</S.Footer>
